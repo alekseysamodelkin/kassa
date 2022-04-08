@@ -1,0 +1,41 @@
+---
+- name: main | load user variables
+  include_vars: "{{ item }}"
+  no_log: true
+  with_first_found:
+    - files:
+        - "{{ inventory_dir }}/group_vars/users.yml"
+      skip: true
+
+- name: main | create users
+  user:
+    name: "{{ item.username }}"
+    comment: 'Created by Ansible'
+    state: "{{ item.state }}"
+    groups: "{{ item.groups }}"
+    remove: yes
+  with_items: "{{ users }}"
+  register: created
+
+- name: main | add public key
+  authorized_key:
+    user: "{{ item.name }}"
+    key: "{{ item.item.key }}"
+  when: item.state == "present"
+  with_items: "{{ created.results }}"
+
+- name: main | add sudoers
+  template:
+    src: templates/sudoers.j2
+    dest: "/etc/sudoers.d/{{ item.username }}-sudoers"
+    validate: 'visudo -cf %s'
+    mode: 0440
+  when: item.sudo
+  with_items: "{{ users }}"
+
+- name: main | remove empty sudoer files
+  file:
+    path: "/etc/sudoers.d/{{ item.username }}-sudoers"
+    state: absent
+  when: not item.sudo
+  with_items: "{{ users }}"

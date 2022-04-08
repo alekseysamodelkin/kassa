@@ -1,0 +1,5 @@
+.git
+.gitignore
+ansible.cfg.example
+Dockerfile
+README.md

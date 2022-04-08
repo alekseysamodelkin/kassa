@@ -1,0 +1,19 @@
+---
+- name: main | install docker
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+      - docker
+      - docker-compose
+  notify:
+    - start docker
+
+- name: main | daemon docker customs
+  template:
+    src: "{{ item.src }}"
+    dest: "/etc/docker/{{ item.dest }}"
+  with_items:
+    - {src: 'daemon.json.j2',    dest: 'daemon.json'}
+  notify:
+    - restart docker

@@ -1,0 +1,8 @@
+{
+        "insecure-registries":["{{ docker_registry }}"],
+        "log-driver": "json-file",
+        "log-opts": {
+                "max-size": "100m",
+                "max-file": "10"
+        }
+}

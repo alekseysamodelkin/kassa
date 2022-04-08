@@ -1,0 +1,11 @@
+---
+- name: kassa_install
+  strategy: debug
+  gather_facts: true
+  hosts: kassa
+  any_errors_fatal: true
+  roles:
+    - { role: docker,      tags: ['docker'] }
+    - { role: users,       tags: ['users'] }
+    - { role: ssh,         tags: ['ssh'] }
+

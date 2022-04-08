@@ -1,0 +1,7 @@
+---
+
+- name: restart sshd
+  service:
+    enabled: yes
+    state: restarted
+    name: sshd
