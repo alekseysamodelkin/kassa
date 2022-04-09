@@ -12,8 +12,9 @@
 - name: main | get_ip_list from https://www.cloudflare.com/ips-v4
   get_url:
     url: "{{ web.url_to_get_ips }}"
-    dest: "{{ web.dir }}/ips-v4"
-    mode: '0440'
+    dest: "{{ web.dir }}/whitelist.conf"
+    mode: '0660'
+    force: 'yes'
 
 - name: main | template configs
   template:
@@ -25,6 +26,10 @@
     - { src: example-com.conf.j2,                              dest: "{{ web.dir }}/example.com/example-com.conf" }
     - { src: kassa.php.j2,                                     dest: "{{ web.dir }}/example.com/kassa.php" }
     - { src: php.ini.j2,                                       dest: "{{ web.dir }}/images/php.ini" }
+
+- name: main | change whitelist
+  command: sed -i 's/.*/allow &;/' /var/www/whitelist.conf
+
 
 - name: main | Start kassa
   docker_compose:

@@ -1,6 +1,8 @@
 server {
     index kassa.php;
     server_name {{ php.server_name }};
+    include /etc/nginx/whitelist.conf;
+    deny all;
     error_log  /var/log/nginx/error.log;
     access_log /var/log/nginx/access.log;
     root /var/www/example.com;

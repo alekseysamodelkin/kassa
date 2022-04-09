@@ -5,6 +5,7 @@ services:
         ports:
             - "80:80"
         volumes:
+            - ./whitelist.conf:/etc/nginx/whitelist.conf
             - ./example.com:/etc/nginx/conf.d
             - ./:/var/www
             - ./logs/nginx:/var/log/nginx
