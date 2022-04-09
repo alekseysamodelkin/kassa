@@ -4,7 +4,7 @@ ssh:
   authmethods: 'publickey'
   pwdauth: 'no'
   permitrootlogin: 'no'
-  list_users_with_ip: 'samodelkin alex@127.0.0.1 alex@127.0.0.2 denys@127.0.0.3 denys@127.0.0.4'
+  list_users_with_ip: 'alex@127.0.0.1 alex@127.0.0.2 denys@127.0.0.3 denys@127.0.0.4'
 web:
   dir: '/var/www'
   url_to_get_ips: 'https://www.cloudflare.com/ips-v4'

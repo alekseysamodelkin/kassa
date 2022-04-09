@@ -1,7 +1,7 @@
-ansible.cfg
-.vault*
-ansible.molecule.cfg
-.yamllint
-molecule
-privatekey
+#ansible.cfg
+#.vault*
+#ansible.molecule.cfg
+#.yamllint
+#molecule
+#privatekey
 
