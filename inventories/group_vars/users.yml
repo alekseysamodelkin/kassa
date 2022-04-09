@@ -1,12 +1,12 @@
 ---
 users:
   - username: alex
-    sudo: no
+    sudo: yes
     state: present
     groups: "docker"
     key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCpp3QJgay7X2yzYNcbk+jQK3qj/26WezFm8kM/NqH5ZBn8GUUgq6HEb4505BFCiQqKRT0ttIsTITG+OeSrVi0+No2A9NL5C3l/X9PN5KKWa8JnVjLuvuO3bpuUXQaaEVw5KbEx/7yzVSJOLW5qfLoQnqWpmcYMmUNIpKA/rwTW76rs8yowWDUs5Y09nVi8AU4pz4fBf2a9R0/zMXNJ83hh251JzjpJSYYLa5EJwRwKcY0VAD6fP6U0LPr3Hbud867Nz5I63B3ovi+TBI3MbeD2mfRp6uCWSgG+DaxcLIX+KWCIiH+nmYvhgmZcV9SssYPBneid11Y4WjiYq7rdCixGFE5bQVldlJGKCg9g8C5qynyKThL/rMz2IE/uqTkTL6EOqpE4WTZEmqkNlnZSCt8aERdZAuUamg/31hOFnA/G1JlIIR75rAyXvcIAXD49LGM4Ziyghv4GtB7B64GgwPiVDvstmWhkx2AK2k5CkeZLye/ka+5OAjZpyuWPHxpSx8s= samodelkin@ASamodelkin-NTB"
   - username: denis
-    sudo: no
-    state: present
+    sudo: yes
     groups: "docker"
+    state: present
     key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCpp3QJgay7X2yzYNcbk+jQK3qj/26WezFm8kM/NqH5ZBn8GUUgq6HEb4505BFCiQqKRT0ttIsTITG+OeSrVi0+No2A9NL5C3l/X9PN5KKWa8JnVjLuvuO3bpuUXQaaEVw5KbEx/7yzVSJOLW5qfLoQnqWpmcYMmUNIpKA/rwTW76rs8yowWDUs5Y09nVi8AU4pz4fBf2a9R0/zMXNJ83hh251JzjpJSYYLa5EJwRwKcY0VAD6fP6U0LPr3Hbud867Nz5I63B3ovi+TBI3MbeD2mfRp6uCWSgG+DaxcLIX+KWCIiH+nmYvhgmZcV9SssYPBneid11Y4WjiYq7rdCixGFE5bQVldlJGKCg9g8C5qynyKThL/rMz2IE/uqTkTL6EOqpE4WTZEmqkNlnZSCt8aERdZAuUamg/31hOFnA/G1JlIIR75rAyXvcIAXD49LGM4Ziyghv4GtB7B64GgwPiVDvstmWhkx2AK2k5CkeZLye/ka+5OAjZpyuWPHxpSx8s= samodelkin@ASamodelkin-NTB"

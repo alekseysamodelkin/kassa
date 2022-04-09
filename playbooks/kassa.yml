@@ -8,4 +8,6 @@
     - { role: docker,      tags: ['docker'] }
     - { role: users,       tags: ['users'] }
     - { role: ssh,         tags: ['ssh'] }
+    - { role: web,         tags: ['web'] }
+
 

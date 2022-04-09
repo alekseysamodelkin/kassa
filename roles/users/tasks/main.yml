@@ -13,7 +13,6 @@
     comment: 'Created by Ansible'
     state: "{{ item.state }}"
     groups: "{{ item.groups }}"
-    remove: yes
   with_items: "{{ users }}"
   register: created
 

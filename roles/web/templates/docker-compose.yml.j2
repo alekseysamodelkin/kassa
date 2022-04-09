@@ -1,0 +1,17 @@
+version: '3'
+services:
+    nginx:
+        image: nginx:1.21.6
+        ports:
+            - "80:80"
+        volumes:
+            - ./example.com:/etc/nginx/conf.d
+            - ./:/var/www
+            - ./logs/nginx:/var/log/nginx
+        links:
+            - php
+    php:
+        image: php:7.4-for_kassa
+        build: ./images
+        volumes:
+            - ./:/var/www
